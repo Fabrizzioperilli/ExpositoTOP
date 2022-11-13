@@ -45,6 +45,11 @@ public class TOPTW {
         return false;
     }
 
+    /**
+     * Method get distance
+     * @param route
+     * @return double
+     */
     public double getDistance(int[] route) {
         double distance = 0.0;
         for (int i = 0; i < route.length - 1; i++) {
@@ -73,7 +78,9 @@ public class TOPTW {
         return distance;
     }
 
-    
+    /**
+     * Calculate the distance 
+     */
     public void calculateDistanceMatrix() {
         for (int i = 0; i < this.nodes + 1; i++) {
             for (int j = 0; j < this.nodes + 1; j++) {
@@ -109,6 +116,12 @@ public class TOPTW {
         return this.nodes;
     }
 
+    /**
+     * Method get distance
+     * @param i
+     * @param j
+     * @return
+     */
     public double getDistance(int i, int j) {
         if(this.isDepot(i)) { i=0; }
         if(this.isDepot(j)) { j=0; }

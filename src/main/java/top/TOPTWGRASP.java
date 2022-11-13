@@ -224,7 +224,12 @@ public class TOPTWGRASP {
         departureTimes.set((int)candidateSelected[1], route);
     }
 
-    //return: cliente, ruta, predecesor, coste tiempo, score
+    /**
+     * Method to evaluate the incremental cost of each candidate
+     * @param customers
+     * @param departureTimes
+     * @return ArrayList of double[] with the following structure: [customer, route, predecessor, cost]
+     */
     public ArrayList< double[] > comprehensiveEvaluation(ArrayList<Integer> customers, ArrayList< ArrayList< Double > > departureTimes) {
         ArrayList< double[] > candidatesList = new ArrayList< double[] >();
         double[] infoCandidate = new double[5];
@@ -325,6 +330,10 @@ public class TOPTWGRASP {
         this.solutionTime = solutionTime;
     }
     
+    /**
+     * Get the best score 
+     * @return double
+     */
     public double getMaxScore() {
         double maxSc = -1.0;
         for(int i = 0; i < this.solution.getProblem().getScore().length; i++) {

@@ -20,7 +20,10 @@ public class ExpositoUtilities {
     public static final int ALIGNMENT_LEFT = 1;
     public static final int ALIGNMENT_RIGHT = 2;
 
-   
+   /**
+    * Method to print 
+    * @param file
+    */
     public static void printFile(String file) {
         BufferedReader reader = null;
         try {
@@ -40,6 +43,11 @@ public class ExpositoUtilities {
         }
     }
 
+    /**
+     * Method to simplify a string by removing all the spaces and tabs
+     * @param string
+     * @retunr String
+     */
     public static String simplifyString(String string) {
         string = string.replaceAll("\t", " ");
         for (int i = 0; i < 50; i++) {
@@ -49,6 +57,12 @@ public class ExpositoUtilities {
         return string;
     }
 
+    /**
+     * Method to multiply matrices
+     * @param a
+     * @param b
+     * @return double[][]
+     */
     public static double[][] multiplyMatrices(double a[][], double b[][]) {
         if (a.length == 0) {
             return new double[0][0];
@@ -70,6 +84,11 @@ public class ExpositoUtilities {
         return ans;
     }
 
+    /** 
+     * Method to write
+     * @param file
+     * @param text
+    */
     public static void writeTextToFile(String file, String text) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
        try {
@@ -80,6 +99,11 @@ public class ExpositoUtilities {
        }
     }
 
+    /**
+     * Method to get formatted text
+     * @param string
+     * @return String
+     */
     public static String getFormat(String string) {
         if (!ExpositoUtilities.isInteger(string)) {
             if (ExpositoUtilities.isDouble(string)) {
